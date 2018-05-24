@@ -1,4 +1,18 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<%= @skills.inspect %>
+<h1>Post</h1>
+<%= @posts.inspect %>
+<h1>Skills</h1>
+<% @skills.each do |skill|%>
+    <%= skill.title %>
+    <%= skill.percent_utilized %>
+    <br>
+<% end %>
+<h1>Portfolio</h1>
+<% @portfolios.each do |item| %>
+    <h2><%= item.title %></h2>
+    <h4><%= item.subtitle %></h4>
+    <img src='<%= item.main_image %>' />
+    <img src='<%= item.thumb_image %>' />
+<% end %>
