@@ -22,11 +22,11 @@ end
 9.times do |portfolio_item|
     Portfolio.create!(
         title: "Portfolio Title #{portfolio_item + 1}",
-        subtitle: 'My great subtitle',
+        subtitle: "My great subtitle #{portfolio_item + 1}",
         body: "I hope you're not a member of the fire brigade.
         It's ends here. I seek the means to fight injustice. To turn fear against those who prey on the fearful.
         As Gotham's favored son you will be ideally placed to strike at the heart of criminality.",
-        main_image: 'http://placehold.it/600/400',
-        thumb_image:'http://placehold.it/350/200'
+        main_image: 'https://placeimg.com/600/400/any',
+        thumb_image:'https://placeimg.com/350/200/any'
     )
 end
