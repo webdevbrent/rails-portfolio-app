@@ -56,7 +56,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to blog_path, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -67,8 +67,8 @@ class PostsController < ApplicationController
     elsif @post.published?
       @post.draft!
     end
-    
-    redirect_to posts_url, notice: 'Post status has been updated' 
+
+    redirect_to blog_path, notice: 'Post status has been updated' 
   end
 
   private
