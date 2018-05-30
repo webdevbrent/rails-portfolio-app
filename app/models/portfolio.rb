@@ -1,4 +1,6 @@
 class Portfolio < ApplicationRecord
+    include Placeholder
+
     validates_presence_of :title, :body, :main_image, :thumb_image
 
     def self.angular
@@ -13,13 +15,13 @@ class Portfolio < ApplicationRecord
     # If main_image or thumb_image are present then the code will be skipped.
     # If not, then each will replace the value with the below defaults.
 
-       self.main_image  ||= 'https://placeimg.com/600/400/any'
-       self.thumb_image ||= 'https://placeimg.com/350/200/any'
+       self.main_image  ||= Placeholder.image_generator(height: '600', width: '400')
+       self.thumb_image ||= Placeholder.image_generator(height: '350', width: '200')
 
     # Same as:
     # if self.main_image == nil
     #   self.main_image = 'https://placeimg.com/600/400/any'
     # end
-    
+
     end
 end
