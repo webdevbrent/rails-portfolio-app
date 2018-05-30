@@ -9,6 +9,17 @@
     )
 end
 
+10.times do |blog_post|
+    Blog.create!(
+        title: "My blog Post #{blog_post + 1}",
+        body: "But I know the rage that drives you. That impossible anger strangIing the grief until the memory of your loved one is just poison in your veins. And one day, you catch yourself wishing the person you loved had never existed so you'd be spared your pain.
+        You see, I'm a guy of simple taste. I enjoy dynamite and gunpowder and gasoline.
+        I hope you're not a member of the fire brigade.
+        It's ends here. I seek the means to fight injustice. To turn fear against those who prey on the fearful.
+        As Gotham's favored son you will be ideally placed to strike at the heart of criminality."
+    )
+end
+
 skills = ['Rails', 'HTML', 'CSS']
 percents_u = [5, 10, 15, 20, 25]
 
