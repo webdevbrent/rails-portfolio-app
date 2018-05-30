@@ -1,7 +1,7 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<h1>Blogs</h1>
+<h1>Blogs (<%= @blogs.count %>)</h1>
 <% @blogs.each do |post| %>
     <%= link_to post.title, blog_path(post) %> <br/>
     <p>
@@ -11,7 +11,7 @@
 
 <hr>
 
-<h1>Skills</h1>
+<h1>Skills (<%= @skills.count %>)</h1>
 <% @skills.each do |skill| %>
     <%= skill.title %> >>> <%= skill.percent_utilized %>  <br>
     <%= image_tag skill.badge %> <br/>
@@ -19,14 +19,14 @@
 
 <hr>
 
-<h1>Technologies</h1>
+<h1>Technologies (<%= @technologies.count %>)</h1>
 <% @technologies.each do |technology| %>
     <%= technology.name %>
 <% end %>
 
 <hr>
 
-<h1>Portfolio</h1>
+<h1>Portfolio (<%= @portfolios.count %>)</h1>
 <% @portfolios.each do |item| %>
     <h2><%= item.title %></h2>
     <h4><%= item.subtitle %></h4>
