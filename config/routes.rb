@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-
-  get 'blog', to: 'posts#index', as: 'blog'
-  get 'blog/:id', to: 'posts#show', as: 'blog_show'
-  resources :posts, except: [:index, :show] do
+  get 'blog', to: 'blogs#index', as: 'blog_index'
+  resources :blogs, except: [:index] do
     member do
       get :toggle_status
     end
