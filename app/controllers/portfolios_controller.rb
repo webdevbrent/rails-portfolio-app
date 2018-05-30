@@ -2,11 +2,12 @@ class PortfoliosController < ApplicationController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     def index
-        @portfolio_items = Portfolio.all.order("created_at ASC")
+        @portfolio_items = Portfolio.all
     end
 
     def new
         @portfolio_item = Portfolio.new
+        3.times { @portfolio_item.technologies.build }
     end
 
     def create
@@ -41,6 +42,6 @@ class PortfoliosController < ApplicationController
     end
 
     def post_params
-        params.require(:portfolio).permit(:title, :subtitle, :body, :main_image, :thumb_image)
+        params.require(:portfolio).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name])
     end
 end
