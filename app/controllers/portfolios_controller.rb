@@ -2,7 +2,7 @@ class PortfoliosController < ApplicationController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     def index
-        @portfolio_items = Portfolio.all.order("created_at ASC")
+        @portfolio_items = Portfolio.all
     end
 
     def new
