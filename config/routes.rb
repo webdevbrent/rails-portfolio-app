@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   get 'blog', to: 'blogs#index', as: 'blog_index'
   resources :blogs, except: [:index] do
     member do
