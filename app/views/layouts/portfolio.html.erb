@@ -12,6 +12,8 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <%= render "shared/nav", location: 'top' %>
+  
   <% if current_user.is_a?(User) %>
     <%= link_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% else %>
@@ -20,8 +22,6 @@
   <% end %>
 
   <%= yield %>
-
-  <%= render "shared/nav" %>
 
   <hr>
   <% if session[:source] %>
