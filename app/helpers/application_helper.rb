@@ -1,11 +1,11 @@
 module ApplicationHelper
-    def login_helper
+    def login_helper style
      if current_user.is_a?(User)
-        link_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?', class: 'nav-link' }
+        link_to 'Logout', destroy_user_session_path, class: style, method: :delete
      else
-        (link_to 'Register', new_user_registration_path, class: 'nav-link') +
+        (link_to 'Register', new_user_registration_path, class: style) +
         " ".html_safe +
-        (link_to 'Login', user_session_path, class: 'nav-link')
+        (link_to 'Login', user_session_path, class: style)
         end
     end
 
