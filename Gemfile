@@ -39,6 +39,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'webdevbrent_view_tool', '~> 0.0.1'
+gem 'petergate', '~> 1.8', '>= 1.8.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
