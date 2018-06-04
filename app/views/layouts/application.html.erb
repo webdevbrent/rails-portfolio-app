@@ -16,8 +16,10 @@
   <%= render "shared/nav", location: 'top' %>
 
   <%= login_helper %>
-
+<div class="container">
   <%= yield %>
+</div>
+  
 
   <hr>
   <%= source_helper("application") %>
