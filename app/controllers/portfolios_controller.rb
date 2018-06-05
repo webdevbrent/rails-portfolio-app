@@ -1,49 +1,51 @@
 class PortfoliosController < ApplicationController
+
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     layout "portfolio"
     access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
-    def index
-        @portfolio_items = Portfolio.all
-    end
 
-    def new
-        @portfolio_item = Portfolio.new
-        3.times { @portfolio_item.technologies.build }
-    end
+  def index
+    @portfolio_items = Portfolio.all
+  end
 
-    def create
-        @portfolio_item = Portfolio.new(post_params)
-        @portfolio_item.save
+  def new
+    @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
+  end
 
-        redirect_to portfolios_path
-    end
+  def create
+    @portfolio_item = Portfolio.new(post_params)
+    @portfolio_item.save
 
-    def show
-    end
+    redirect_to portfolios_path
+  end
 
-    def edit
-    end
+  def show
+  end
 
-    def update
-        @portfolio_item.update(post_params)
+  def edit
+  end
 
-        redirect_to portfolios_path
-    end
+  def update
+    @portfolio_item.update(post_params)
 
-    def destroy
-        @portfolio_item.destroy
+    redirect_to portfolios_path
+  end
 
-        redirect_to portfolios_url
-    end
+  def destroy
+    @portfolio_item.destroy
 
-    private
+    redirect_to portfolios_url
+  end
 
-    def set_post
-        @portfolio_item = Portfolio.find(params[:id])
-    end
+  private
 
-    def post_params
-        params.require(:portfolio).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name])
-    end
+  def set_post
+    @portfolio_item = Portfolio.find(params[:id])
+  end
+
+  def post_params
+    params.require(:portfolio).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name])
+  end
 end
