@@ -1,13 +1,34 @@
+<h1>Hi, <%= current_user.first_name %></h1>
 
+<h1>Blogs (<%= @blogs.count %>)</h1>
+<% @blogs.each do |post| %>
+    <%= link_to post.title, blog_path(post) %> <br/>
+    <p>
+        <%= post.body %>
+    </p>
+<% end %>
 
-      
-        <h1 class="cover-heading">Brent Phillips - Software Developer</h1>
-        <p class="lead">
-          Web Developer with a passion for web application development. Skilled in conceptualizing, designing, development, and deploying software containing logical solutions to business problems. Dedicated to driving innovation with the ability to follow industry and technical trends, and facilitating early adoptions of innovations.
-        </p>
-        <p class="lead">
-        <%= link_to 'About Me', about_me_path, class: 'btn btn-lg btn-secondary' %>
-        </p>
-      
+<hr>
 
+<h1>Skills (<%= @skills.count %>)</h1>
+<% @skills.each do |skill| %>
+    <%= skill.title %> >>> <%= skill.percent_utilized %>  <br>
+    <%= image_tag skill.badge %> <br/>
+<% end %>
 
+<hr>
+
+<h1>Technologies (<%= @technologies.count %>)</h1>
+<% @technologies.each do |technology| %>
+    <%= technology.name %>
+<% end %>
+
+<hr>
+
+<h1>Portfolio (<%= @portfolios.count %>)</h1>
+<% @portfolios.each do |item| %>
+    <h2><%= item.title %></h2>
+    <h4><%= item.subtitle %></h4>
+    <%= image_tag item.main_image %>
+    <%= image_tag item.thumb_image %>
+<% end %>
