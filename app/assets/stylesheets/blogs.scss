@@ -36,6 +36,10 @@ h6 {
   }
 }
 
+.nav-link {
+  display: inline;
+}
+
 .nav-scroller {
   position: relative;
   z-index: 2;
@@ -108,6 +112,9 @@ h6 {
 @media (min-width: 40em) {
   .blog-title {
     font-size: 3.5rem;
+  }
+  .nav-link {
+    display: block;
   }
 }
 
