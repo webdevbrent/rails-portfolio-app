@@ -15,21 +15,13 @@
 </head>
 
 <body>
+  <%= render 'shared/blog_nav' %>
+  
   <div class="container">
-    <header class="blog-header py-3">
-      <%= render 'shared/blog_nav' %>
-    </header>
-    <div class="row">
       <%= yield %>
-        <%= render 'shared/blog_sidebar' %>
-    </div>
-
   </div>
 
-  <footer class="blog-footer">
-    <%= render "shared/application_footer"  %>
-  </footer>
-
+  <%= render 'shared/blog_footer' %>
 
   <%= source_helper("blog") %>
 

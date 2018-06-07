@@ -1,25 +1,16 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <%= link_to 'Brent.Codes', root_path, class: 'navbar-brand' %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbarSm">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse" id="collapsingNavbarSm">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-        <%= link_to "About", about_me_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-        <%= link_to "Contact", contact_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-        <%= link_to "Blog", blog_index_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-        <%= link_to "Portfolio", portfolios_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-        <%= login_helper 'btn btn-success' %>
-            </li>
-        </ul>
-    </div>
-</nav>
+<div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <%= link_to 'Brent.Codes', root_path, class: 'navbar-brand' %>
+          <%= link_to "About", about_me_path, class: 'nav-link text-white' %>
+          <%= link_to "Contact", contact_path, class: 'nav-link text-white' %>
+          <%= link_to "Blog", blog_index_path, class: 'nav-link text-white' %>
+          <%= link_to "Portfolio", portfolios_path, class: 'nav-link text-white' %>
+
+          <% if current_user.is_a?(GuestUser) %>
+            <%= link_to 'Register', new_user_registration_path, class: 'nav-link text-white' %>
+            <%= link_to 'Login', user_session_path, class: 'nav-link text-white'  %>
+          <% else %>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'nav-link text-white' %>
+          <% end %>
+        </div>
+</div>
