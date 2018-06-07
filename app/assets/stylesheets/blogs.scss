@@ -41,6 +41,10 @@ h6 {
   display: inline;
 }
 
+.active {
+  border-bottom: 2px solid white;
+}
+
 .nav-scroller {
   position: relative;
   z-index: 2;

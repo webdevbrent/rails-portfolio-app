@@ -1,10 +1,7 @@
 <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
           <%= link_to 'Brent.Codes', root_path, class: 'navbar-brand' %>
-          <%= link_to "About", about_me_path, class: 'nav-link text-white' %>
-          <%= link_to "Contact", contact_path, class: 'nav-link text-white' %>
-          <%= link_to "Blog", blog_index_path, class: 'nav-link text-white' %>
-          <%= link_to "Portfolio", portfolios_path, class: 'nav-link text-white' %>
+          <%= nav_helper 'nav-link text-white' %>
 
           <% if current_user.is_a?(GuestUser) %>
             <%= link_to 'Register', new_user_registration_path, class: 'nav-link text-white' %>
